@@ -7,7 +7,7 @@ const HomePage = ({searchTerm}) => {
       <section className="hero">
         <div className="container">
           <h1>Bem-vindo ao Blog Escolar</h1>
-          <a href="/admin" className="btn">Área Administrativa</a>
+          {/*<a href="/admin" className="btn">Área Administrativa</a>*/}
         </div>
       </section>
       <section className="posts">

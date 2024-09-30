@@ -12,14 +12,19 @@ const PostTable = () => {
   const [isModalOpenEdit, setIsModalOpenEdit] = useState(false);
   const [isModalOpenDelete, setIsModalOpenDelete] = useState(false);
   const [currentPost, setCurrentPost] = useState(null);
-  const [postToDelete, setPostToDelete] = useState(null); 
+  const [postToDelete, setPostToDelete] = useState(null);
+
+  const fetchPosts = async () => {
+    try {
+      const response = await axios.get(`http://localhost:3000/api/postagens`);
+      setPosts(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/api/postagens`)
-      .then(response => {
-        setPosts(response.data);
-      })
-      .catch(error => console.error(error));
+    fetchPosts();
   }, []);
 
   const onDelete = async () => {
@@ -30,7 +35,7 @@ const PostTable = () => {
           'Authorization': `Bearer ${token}`,
         },
       });
-      setPosts(posts.filter(post => post.id !== postToDelete));
+      fetchPosts();
       setIsModalOpenDelete(false);
     } catch (error) {
       console.error(error);
@@ -52,14 +57,34 @@ const PostTable = () => {
     setIsModalOpenDelete(true);
   };
 
-  const handleAddPost = (newPost) => {
-    setPosts([...posts, newPost]);
-    setIsModalOpenAdd(false);
+  const handleAddPost = async (newPost) => {
+    const token = localStorage.getItem('token');
+    try {
+      await axios.post(`http://localhost:3000/api/postagens`, newPost, {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+      });
+      await fetchPosts();
+      setIsModalOpenAdd(false);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
-  const handleEditPost = (updatedPost) => {
-    setPosts(posts.map(post => (post.id === updatedPost.id ? updatedPost : post)));
-    setIsModalOpenEdit(false);
+  const handleEditPost = async (updatedPost) => {
+    const token = localStorage.getItem('token');
+    try {
+      await axios.put(`http://localhost:3000/api/postagens/${updatedPost.id}`, updatedPost, {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+      });
+      await fetchPosts();
+      setIsModalOpenEdit(false);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -112,6 +137,7 @@ const PostTable = () => {
           <PostForm 
             onAddPost={handleAddPost} 
             closeModal={() => setIsModalOpenAdd(false)}
+            fetchPosts={fetchPosts}
           />
         </Modal>
       )}

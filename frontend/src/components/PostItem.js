@@ -9,7 +9,7 @@ const PostItem = ({ post }) => {
       <div>
       <img className='img-post-home' src={post.img} alt="Foto relacionada ao post" />
       </div>
-      <div>
+      <div className='post-conteudo'>
         <h3>{post.titulo}</h3>
         <p>{post.descricao}</p>
         <div className="post-breve-conteudo" dangerouslySetInnerHTML={{ __html: post.conteudo.slice(0,100)}}/>

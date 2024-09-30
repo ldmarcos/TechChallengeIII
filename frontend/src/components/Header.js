@@ -71,12 +71,12 @@ const Header = ({ onSearch }) => {
             <li>{isLoggedIn ? (
               <Link to="/postagens" onClick={closeMenu}>Postagens</Link>
             ) : (
-              <span onClick={() => { 
+              <Link onClick={() => { 
                 closeMenu(); 
                 alert("Você precisa estar logado para acessar as postagens."); 
               }}>
                 Postagens
-              </span>
+              </Link>
             )}
             </li>
             <li><Link to="/contato" onClick={closeMenu}>Contato</Link></li>

@@ -2,13 +2,14 @@ const Postagem = require('../models/postagemModel');
 const {Op} = require('sequelize')
 exports.listarPostagens = async (req, res) => {
   try {
-    const postagens = await Postagem.findAll();
+    const postagens = await Postagem.findAll({
+      order: [['createdAt', 'DESC']]
+    });
     res.status(200).json(postagens);
   } catch (error) {
     res.status(400).json({ error: 'Falha ao listar postagens' });
   }
 };
-
 exports.obterPostagem = async (req, res) => {
   const { id } = req.params;
   try {

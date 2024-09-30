@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import axios from 'axios';
-import './Formulario.css'
+import './Formulario.css';
 
-const PostForm = ({ onAddPost, post, closeModal }) => {
+const PostForm = ({ closeModal, fetchPosts }) => {
     const [titulo, setTitulo] = useState('');
     const [autor, setAutor] = useState('');
     const [img, setImg] = useState('');
@@ -35,7 +35,6 @@ const PostForm = ({ onAddPost, post, closeModal }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const newPost = {
-            id: post ? post.id : null,
             titulo,
             autor,
             img,
@@ -49,8 +48,9 @@ const PostForm = ({ onAddPost, post, closeModal }) => {
                 },
             });
             console.log(response.data);
-            onAddPost(newPost);
             resetForm();
+            closeModal();
+            await fetchPosts(); 
         } catch (error) {
             console.error('Erro ao adicionar a postagem:', error);
         }
@@ -114,7 +114,6 @@ const PostForm = ({ onAddPost, post, closeModal }) => {
             </div>
         </form>
     );
-    
 };
 
 export default PostForm;
