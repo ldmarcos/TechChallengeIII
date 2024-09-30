@@ -1,0 +1,39 @@
+.post-detail-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 80%;
+}
+
+.post-detail-container h1{
+    color: #0057B7;
+    font-weight: 700;
+}
+
+.post-detail-data-autor{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-detail-data-autor span{
+    color: #0057B7;
+    font-weight: 700;
+}
+
+.linha-separacao {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border: none;
+    height: 2px; 
+    background-color: #0057B7;
+    width: 100%;
+}
+
+.conteudo{
+    text-align: left;
+}

@@ -1,0 +1,546 @@
+/* Configurações iniciais */
+:root {
+    --primary-color: #0057b7;
+    --secondary-color: #f5a623;
+    --font-color: #333;
+    --background-color: #f9f9f9;
+    --font-family: 'Poppins', sans-serif;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.5rem;
+    --font-size-sm: 0.875rem;
+    --container-width: 90%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    color: var(--font-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 0;
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    font-size: var(--font-size-lg);
+    font-weight: bold;
+}
+
+.logo-img {
+    width: 100px;
+    height: auto;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-icon .hamburger {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+}
+
+#menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    gap: 0.5rem;
+}
+
+#menu a {
+    display: block;
+    padding: 0.5rem;
+    color: white;
+    text-decoration: none;
+}
+
+#menu li {
+    cursor: pointer;
+}
+
+#btn-mobile {
+    display: none;
+}
+
+.search-and-login {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 0.5rem;
+    font-size: var(--font-size-base);
+    border-radius: 5px;
+    border: none;
+    width: 40%;
+}
+
+.btn-cta {
+    background-color: var(--secondary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: white;
+    margin-left: 0.5rem;
+}
+
+.btn-cta:hover {
+    background-color: #d48b18;
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--secondary-color);
+    text-align: center;
+    padding: 2rem 0;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: var(--font-size-lg);
+}
+
+.hero .btn {
+    background-color: var(--primary-color);
+    padding: 0.75rem 1.5rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Posts Section */
+.posts {
+    padding: 2rem 0;
+}
+
+.posts h2 {
+    font-size: var(--font-size-lg);
+    margin-bottom: 2rem;
+}
+
+.post {
+    display: flex;
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.post img {
+    width: 290px;
+    height: 144px;
+    border-radius: 10px;
+    margin-right: 1rem;
+}
+
+.post-content h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: 0.5rem;
+}
+
+.post-content p {
+    font-size: var(--font-size-sm);
+}
+
+/* Estilo para o nome do autor */
+.post .author {
+    font-size: var(--font-size-sm);
+    color: #777;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+.btn-secondary {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Form Sections */
+.criar-post, .editar-post {
+    padding: 2rem 0;
+}
+
+.criar-post h1, .editar-post h1 {
+    font-size: var(--font-size-lg);
+    margin-bottom: 2rem;
+}
+
+/* Estilos da Página Administrativa */
+.admin-posts {
+    padding: 2rem 0;
+}
+
+.admin-posts h1 {
+    font-size: var(--font-size-lg);
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.posts-table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.posts-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    min-width: 600px; /* Definir uma largura mínima para a tabela */
+    margin-top: 1rem;
+}
+
+.posts-table th,
+.posts-table td {
+    text-align: left;
+    padding: 1rem;
+    font-size: var(--font-size-base);
+    border-bottom: 1px solid #ddd;
+}
+
+.posts-table th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+.posts-table td {
+    font-size: var(--font-size-sm);
+}
+
+.posts-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.posts-table .btn-edit {
+    background-color: var(--secondary-color);
+    padding: 0.5rem 1rem;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 0.5rem;
+}
+
+.posts-table .btn-delete {
+    background-color: red;
+    padding: 0.5rem 1rem;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.posts-table .btn-edit:hover {
+    background-color: #d48b18;
+}
+
+.posts-table .btn-delete:hover {
+    background-color: #b30000;
+}
+
+/* Responsividade para a tabela */
+@media (max-width: 600px) {
+    .posts-table-container {
+        overflow-x: auto; /* Adiciona barra de rolagem horizontal */
+    }
+    
+    .posts-table {
+        width: 100%; /* Mantém a tabela 100% da largura disponível */
+    }
+
+    .posts-table th,
+    .posts-table td {
+        padding: 0.5rem; /* Ajusta o espaçamento para telas menores */
+        font-size: var(--font-size-sm); /* Diminui a fonte em telas menores */
+    }
+
+    .posts-table td {
+        white-space: nowrap; /* Impede que o conteúdo seja quebrado em várias linhas */
+    }
+}
+
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: var(--font-size-base);
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: var(--font-size-base);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+button.btn {
+    background-color: var(--secondary-color);
+    padding: 0.75rem 1.5rem;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: var(--font-size-base);
+    cursor: pointer;
+}
+
+button.btn:hover {
+    background-color: #d48b18;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto;
+    width: 100%;
+}
+
+.container {
+    width: var(--container-width);
+    margin: 0 auto;
+    max-width: 1024px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    #menu {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 100px;
+        right: 0px;
+        background: var(--primary-color);
+        transition: 0.6s;
+        z-index: 1000;
+        height: 0px;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+    
+    #nav.active #menu {
+        height: calc(60vh - 100px);
+        visibility: visible;
+        overflow-y: auto;
+    }
+    
+    #menu a {
+        padding: 1rem 0;
+        margin: 0 1rem;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    #btn-mobile {
+        display: flex;
+        padding: 1rem 0rem 1rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: 0.5rem;
+    }
+    
+    #hamburger {
+        border-top: 3px solid;
+        width: 30px;
+        color: #ffffff;
+    }
+    
+    #hamburger::after,
+    #hamburger::before {
+        content: '';
+        display: block;
+        width: 30px;
+        height: 2px;
+        background: white;
+        margin-top: 5px;
+        transition: 0.3s;
+        position: relative;
+    }
+    
+    #nav.active #hamburger {
+        border-top-color: transparent;
+    }
+    
+    #nav.active #hamburger::before {
+        transform: rotate(135deg);
+    }
+    
+    #nav.active #hamburger::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+
+    .logo-img {
+        width: 45px;
+        margin-right: 0.6rem;
+        margin-top: 0.6rem;
+    }
+
+    .search-and-login {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
+    .post {
+        flex-direction: column;
+    }
+
+    .post img {
+        width: 100%;
+        height: 198px;
+    }
+}
+
+/* Página de Leitura de Post */
+.post-detail {
+    padding: 2rem 0;
+}
+
+.post-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.post-content-img {
+    width: 80%;
+    height: 80%;
+    border-radius: 10px;
+}
+
+.post-content h1 {
+    font-size: var(--font-size-lg);
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.post-content p {
+    font-size: var(--font-size-base);
+    color: var(--font-color);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.post-content blockquote {
+    font-size: var(--font-size-lg);
+    font-style: italic;
+    color: var(--secondary-color);
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--secondary-color);
+    margin: 2rem 0;
+}
+
+.comments-section {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.comments-section h2 {
+    font-size: var(--font-size-lg);
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.comment-form button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.comments-list h3 {
+    font-size: var(--font-size-base);
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.comments-list p {
+    font-size: var(--font-size-sm);
+    color: var(--font-color);
+    margin-bottom: 1rem;
+}

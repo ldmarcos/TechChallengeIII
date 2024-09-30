@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_USER: postgres
+      DB_PASS: password
+      DB_NAME: techchallengeii
+    command: ["./wait-for-it.sh", "db:5432", "--", "npm", "start"]
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: techchallengeii
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  db_data:

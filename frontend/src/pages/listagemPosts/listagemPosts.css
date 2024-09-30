@@ -1,0 +1,72 @@
+.container-listagem {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 1%;
+}
+
+.cabecalho {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+td {
+    text-align: center;
+}
+
+th {
+    background-color: #ffeb3b; /* Amarelo claro */
+    color: #333;
+}
+
+tr:nth-child(even) {
+    background-color: #fff; /* Branco para linhas pares */
+}
+
+/*tr:hover {*
+    background-color: #ddd; /* Amarelo mais escuro ao passar o mouse 
+}*/
+
+button {
+    padding: 6px 12px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:nth-of-type(1) {
+    background-color: #0057b7; /* Amarelo */
+    color: #fff;
+}
+
+button:nth-of-type(2) {
+    background-color: #ef5350; /* Vermelho para excluir */
+    color: #fff;
+}
+
+.btnNovoPost{
+    background-color: green !important;
+    color: #fff;
+}
