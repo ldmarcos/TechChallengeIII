@@ -123,7 +123,7 @@ const PostTable = () => {
                 <td>{post.titulo}</td>
                 <td>{post.autor}</td>
                 <td>
-                  <button onClick={() => handleOpenModalEdit(post)}>Editar</button>
+                  <button className='btn-editar' onClick={() => handleOpenModalEdit(post)}>Editar</button>
                   <button onClick={() => handleOpenModalDelete(post.id)}>Excluir</button>
                 </td>
               </tr>

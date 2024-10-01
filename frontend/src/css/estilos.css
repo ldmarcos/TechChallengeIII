@@ -473,7 +473,7 @@ footer {
     }
 
     .post img {
-        width: 402px;
+        width: 100%;
         height: 190px;
     }
 }

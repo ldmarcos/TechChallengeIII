@@ -7,7 +7,7 @@ const PostItem = ({ post }) => {
   return (
     <article className="post">
       <div>
-      <img className='img-post-home' src={post.img} alt="Foto relacionada ao post" />
+      <img src={post.img} alt="Foto relacionada ao post" />
       </div>
       <div className='post-conteudo'>
         <h3>{post.titulo}</h3>

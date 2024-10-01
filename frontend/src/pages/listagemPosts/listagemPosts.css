@@ -28,17 +28,14 @@ td {
 }
 
 th {
-    background-color: #ffeb3b; /* Amarelo claro */
+    background-color: #ffeb3b;
     color: #333;
 }
 
 tr:nth-child(even) {
-    background-color: #fff; /* Branco para linhas pares */
+    background-color: #fff; 
 }
 
-/*tr:hover {*
-    background-color: #ddd; /* Amarelo mais escuro ao passar o mouse 
-}*/
 
 button {
     padding: 6px 12px;
@@ -69,4 +66,34 @@ button:nth-of-type(2) {
 .btnNovoPost{
     background-color: green !important;
     color: #fff;
+}
+
+@media (max-width: 1100px) {
+    .btn-editar{
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .container-listagem {
+        width: 95%;
+    }
+
+    table {
+        display: block; /* Torna a tabela um bloco */
+        overflow-x: auto; /* Adiciona rolagem horizontal */
+        white-space: normal; /* Impede quebra de linha */
+        margin: 0; /* Remove margens que possam afetar a largura */
+    }
+
+    th, td {
+        min-width: 80px; /* Ajuste a largura mínima conforme necessário */
+        max-width: 150px; /* Limite a largura máxima se necessário */
+        font-size: 10px;
+    }
+
+    button {
+        padding: 3px 6px;
+        font-size: 10px;
+    }
 }
