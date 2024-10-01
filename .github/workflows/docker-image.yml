@@ -1,0 +1,24 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build and run Docker containers
+      run: |
+          cd backend/TechChallengeII
+          docker-compose up --build
+
+    - name: Wait for services to be ready
+      run: |
+          sleep 30
