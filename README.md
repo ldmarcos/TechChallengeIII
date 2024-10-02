@@ -15,20 +15,21 @@ Este projeto é uma aplicação de blogging dinâmica criada para professores e 
 ```
 TechChallengeIII/
 ├── backend/
-│   ├── config/
-│   │   └── db.js
-│   ├── controllers/
-│   │   ├── usuarioController.js
-│   │   └── postagemController.js
-│   ├── middleware/
-│   │   └── authMiddleware.js
-│   ├── models/
-│   │   ├── usuarioModel.js
-│   │   └── postagemModel.js
-│   ├── routes/
-│   │   ├── usuarioRoutes.js
-│   │   └── postagemRoutes.js
-│   └── server.js
+├────TechChallengeII
+│     ├── config/
+│     │   └── db.js
+│     ├── controllers/
+│     │   ├── usuarioController.js
+│     │   └── postagemController.js
+│     ├── middleware/
+│     │   └── authMiddleware.js
+│     ├── models/
+│     │   ├── usuarioModel.js
+│     │   └── postagemModel.js
+│     ├── routes/
+│     ├── usuarioRoutes.js
+│     │   └── postagemRoutes.js
+│     └── server.js
 ├── frontend/
 │   ├── public/
 │   ├── src/
