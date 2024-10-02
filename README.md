@@ -115,7 +115,7 @@ npm start
 
 7. **Execute os testes (opcional):**
 ```bash
-npm test
+npx jest
 ```
 
 🔗 **Endpoints da API**
