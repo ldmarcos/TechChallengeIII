@@ -7,7 +7,6 @@ const Header = ({ onSearch }) => {
   const [isMenuActive, setIsMenuActive] = useState(false);
   const [isDebounced, setIsDebounced] = useState(false);
   const { isLoggedIn, logout } = useAuth();
-  const [searchTerm, setSearchTerm] = useState('');
   const [shouldRedirect, setShouldRedirect] = useState(false);
   const navigate = useNavigate();
 
@@ -34,9 +33,7 @@ const Header = ({ onSearch }) => {
   };
 
   const handleSearchChange = (event) => {
-    const value = event.target.value;
-    setSearchTerm(value);
-    onSearch(value);
+    onSearch(event.target.value);
   };
 
   useEffect(() => {
