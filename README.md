@@ -84,7 +84,7 @@ DB_NAME=techchallenge
 3. **Instale as dependências do backend e frontend:**  
 No diretório backend:
 ```bash
-cd backend
+cd backend/ TechChallengeII
 npm install
 ```
 No diretório frontend:
